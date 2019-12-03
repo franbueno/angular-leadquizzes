@@ -1,0 +1,10 @@
+<div class="card preview-card" [ngStyle]="{'background-image': 'url(' + background + ')'}">
+  <div class="card-img-overlay d-flex">
+    <div class="text-center text-white align-self-center mx-auto">
+      <h3 class="blink_me" *ngIf="!isFormValues">Waiting content 🤗🤟 </h3>
+      <h2 class="card-title font-weight-bold"> {{ form.value.title }} </h2>
+      <p class="card-subtitle mt-2 mb-4" [innerHTML]="form.value.description"></p>
+      <a class="card-link font-weight-bold btn rounded-pill btn-lg btn-success" [routerLink]="" *ngIf="form.value.action"> {{ form.value.action }} </a>
+    </div>
+  </div>
+</div>

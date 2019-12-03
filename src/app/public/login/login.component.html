@@ -1,0 +1,29 @@
+<div class="login h-100">
+  <div class="middle-box text-center" [@fadeInOut]="'in'">
+    <div class="mt-5">
+      <h3>Welcome 😄</h3>
+      <p>Angular 8 SPA + Symfony 3.4 LTS</p>
+      <p>Login in. To see it in action.</p>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+        <button [disabled]="loading || loginForm.invalid" class="btn btn-primary login_btn w-100">
+          <span *ngIf="loading" class=" mr-1"></span>
+          Login
+        </button>
+      </form>
+      <p class="mt-1"><small>For Dornubari, Goran & Milan with 💛</small></p>
+    </div>
+  </div>
+
+</div>

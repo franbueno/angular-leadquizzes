@@ -1,0 +1,15 @@
+<div class="modal-header d-flex justify-content-between">
+  <h4 class="modal-title text-white">{{modalData.title}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss('Cross click')">
+    &times;
+  </button>
+</div>
+<div class="modal-body">
+  <div [innerHTML]="modalData.message"></div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" [ngClass]="modalData.footerButtons[0].class ? modalData.footerButtons[0].class : ''" (click)="dismiss()">{{modalData.footerButtons[0].text}}</button>
+  <button type="button" class="btn" [ngClass]="modalData.footerButtons[1].class ? modalData.footerButtons[1].class : ''" (click)="close(true)">{{modalData.footerButtons[1].text}}</button>
+</div>
+
+

@@ -1,0 +1,40 @@
+<div class="embed-and-tracking py-2">
+  <a class="btn btn-primary btn-sm mr-3" routerLink="">Embed &amp; Tracking</a>
+</div>
+<div class="dashboard">
+  <div class="container-fluid">
+    <h1 class="bd-title" id="content">Dashboard</h1>
+    <div class="row">
+      <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4" [@fadeInOut]="'in'">
+        <div class="card card-body new-quiz justify-content-center text-center h-100">
+          <h5 class="card-title">Create New Content</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Create your lead generation content</h6>
+          <a class="card-link btn btn-primary" routerLink="quiz/new">Create Quiz</a>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4" *ngFor="let quiz of quizzes" [@fadeInOut]="'in'">
+        <div class="card text-center">
+          <img class="card-img-top" src="./assets/dashboard-no-image.jpg" *ngIf="!quiz.image; else elseImage" alt="Card image">
+          <ng-template #elseImage>
+            <img class="card-img-top" src="{{ quiz.urlImage }}" alt="Card image cap">
+          </ng-template>
+          <div class="overlay">
+            <span class="overlay-content" [ngClass]="{'published': quiz.publish}">
+              {{ quiz.publishStatusText + 'ed' | titlecase }}
+            </span>
+          </div>
+          <div class="card-body dashboard-quiz-title">
+            <h5 class="card-title"> {{ quiz.name }}</h5>
+            <div class="actionsxw">
+              <span class="card-link btn btn-sm btn-light" (click)="changePublishState(quiz)"> {{ quiz.publish ? 'Unpublish' : 'Publish' }} </span>
+              <span class="card-link btn btn-sm btn-light" (click)="editQuiz(quiz)">Edit</span>
+              <span class="card-link btn btn-sm btn-danger text-white" (click)="deleteQuiz(quiz)">Delete</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

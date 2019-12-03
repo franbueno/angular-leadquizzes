@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand fixed-top navbar-dark bg-dark" [@fadeInOut]="'in'">
+  <a class="navbar-brand" routerLink="/">
+    <img alt="leadQuizes logo" src="./assets/logo/logo-short.svg">
+  </a>
+
+  <ng-container *ngIf="this.user" >
+    <div ngbDropdown placement="bottom-right" class="mr-3 pr-2 border-right">
+      <button class="btn btn-link text-white" id="submenu" ngbDropdownToggle>{{ this.user.email }}</button>
+      <div class="w-100" ngbDropdownMenu aria-labelledby="submenu">
+        <button ngbDropdownItem (click)="logout()">Logout</button>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="btn btn-success btn-sm" routerLink="/">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary btn-sm ml-3" routerLink="/quiz/new">Create Quiz</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item border-left">
+          <a class="nav-link p-2" routerLink="/">
+            Help
+          </a>
+        </li>
+        <li class="nav-item border-left">
+          <a class="nav-link p-2" routerLink="/">
+            Settings
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</nav>

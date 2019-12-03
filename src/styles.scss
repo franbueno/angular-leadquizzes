@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+html * {
+  font-family: Nunito;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  height: 100%;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-move {
+  cursor: move;
+}
+
+/* Embed top */
+.embed-and-tracking {
+  height: 49px;
+  background: white;
+  border-bottom: 2px solid #DCE3E8;
+  position: fixed;
+  text-align: right;
+  top: 47px;
+  width: 100%;
+  z-index: 10;
+  padding: 0;
+}
+
+.embed-title {
+  height: auto;
+  background: white;
+  border-bottom: 2px solid #DCE3E8;
+  position: fixed;
+  top: 47px;
+  width: 100%;
+  z-index: 10;
+  padding: 0;
+}
+
+/* Drag and drop */
+
+
+
+/* Blink animation */
+
+.blink_me {
+  animation: blinker 2s linear infinite;
+}
+
+.blink_me_slow {
+  animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+@keyframes example {
+  0%   {transform: scale(0.5)}
+  75%  {transform: scale(1.1)}
+  100% {transform: scale(1)}
+}
