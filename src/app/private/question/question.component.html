@@ -77,7 +77,7 @@
         </form>
       </div>
       <div class="col-12 col-sm-8 pt-3 pt-sm-0" *ngIf="questionForm" [@fadeInOut]="'in'">
-        <app-question-preview [questions]="quiz.questions" [form]="questionForm" (next)="onChangeQuestion($event)"></app-question-preview>
+        <app-question-preview [questions]="quiz?.questions" [form]="questionForm" (next)="onChangeQuestion($event)"></app-question-preview>
       </div>
     </div>
   </div>
