@@ -103,16 +103,17 @@ export class QuestionComponent implements OnInit, OnDestroy {
 
           this.question = resp
           this.submitted = false
-          this.modalService.toastSuccess(`Question ${this.question.name} was updated successful.`)
+          this.modalService.toastSuccess(`Question "${this.question.name}" was updated successful.`)
         })
       } else {
         // New question
         this.questionService.create(value).subscribe((resp) => {
           this.question = resp
+          this.formControls.id.setValue(this.question.id)
           // Added to update questions selector
           this.quiz.questions.push(resp)
           this.submitted = false
-          this.modalService.toastSuccess(`Question ${this.question.name} was created successful.`)
+          this.modalService.toastSuccess(`Question "${this.question.name}" was created successful.`)
         })
       }
     } else {
@@ -137,7 +138,7 @@ export class QuestionComponent implements OnInit, OnDestroy {
   }
 
   onChangeQuestion(data: any) {
-    const indexOfQuestions = findIndex(this.quiz.questions, { name: data.name })
+    const indexOfQuestions = findIndex(this.quiz.questions, { id: data.id })
     if (indexOfQuestions > -1) {
       const pos = data.type ? 1 : -1
       this.question = this.quiz.questions[indexOfQuestions + pos]
@@ -148,6 +149,7 @@ export class QuestionComponent implements OnInit, OnDestroy {
   // Question form builder
   private buildForm(question?: QuestionModel) {
     this.questionForm = this.fb.group({
+      id: [question ? question.id : ''],
       name: [
         question ? question.name : '',
         [

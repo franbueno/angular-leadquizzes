@@ -31,11 +31,11 @@
           </div>
 
           <div class="form-group" ngbDropdown>
-            <input type="text" class="form-control dropdown-input" formControlName="type"
+            <input type="text" class="form-control dropdown-input cursor-pointer" formControlName="type"
                    data-toggle="dropdown" [value]="formControls.type?.value" ngbDropdownToggle
-                   [ngClass]="{ 'is-invalid': submitted && formControls.type.errors }" placeholder="Answer type"
+                   [ngClass]="{ 'is-invalid': submitted && formControls.type.errors }" placeholder="Type"
                    readonly>
-            <ul class="w-100" ngbDropdownMenu>
+            <ul class="cursor-pointer w-100" ngbDropdownMenu>
               <li *ngFor="let answer of answerType" ngbDropdownItem
                   (click)="formControls.type.setValue(answer)"
                   class="dropdown-item">

@@ -74,13 +74,13 @@ export class QuizComponent implements OnInit, OnDestroy {
         this.quizService.update({ ...this.quiz, ...value }).subscribe((resp) => {
           this.quiz = resp
           this.submitted = false
-          this.modalService.toastSuccess(`Quizz ${this.quiz.name} was updated successful.`)
+          this.modalService.toastSuccess(`Quizz "${this.quiz.name}" was updated successful.`)
         })
       } else {
         this.quizService.create(value).subscribe((resp) => {
           this.quiz = resp
           this.submitted = false
-          this.modalService.toastSuccess(`Quizz ${this.quiz.name} was created successful.`)
+          this.modalService.toastSuccess(`Quizz "${this.quiz.name}" was created successful.`)
 
           // Change route once we create a new quiz
           this.router.navigateByUrl(this.router.url.replace('new', this.quiz.id))

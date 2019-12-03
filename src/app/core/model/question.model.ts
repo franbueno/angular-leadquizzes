@@ -23,7 +23,6 @@ export class QuestionModel extends BaseModel {
 
   toJSON() {
     return {
-      id: this.id,
       name: this.name,
       type: this.type,
       answers: this.answers,

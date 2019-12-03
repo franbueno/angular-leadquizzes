@@ -1,7 +1,7 @@
 <div class="card card-body question-preview-card justify-content-center text-white">
     <p class="text-muted" *ngIf="questionPosition; else elseNewQuestion">Question {{ questionPosition }} of {{ questions.length }}</p>
     <ng-template #elseNewQuestion>
-      <p class="text-muted">Question {{ questions.length + 1 }} of {{ questions.length + 1 }}</p>
+      <p class="text-muted">Question {{ questions.length + 1}} of {{ questions.length + 1 }}</p>
     </ng-template>
     <h3 class="card-title font-weight-bold"> {{ form.value.name }} </h3>
     <ul class="list-group" *ngIf="this.form.value.answers">
@@ -11,7 +11,7 @@
     </ul>
     <div class="d-flex">
       <a class="font-weight-bold btn rounded-pill btn-lg btn-success w-25 mt-4"
-         *ngIf="questionPosition!==1" (click)="changeQuestion()"> Prev </a>
+         *ngIf="questions.length > 0 && questionPosition!==1" (click)="changeQuestion()"> Back </a>
       <a class="font-weight-bold btn rounded-pill btn-lg btn-success w-25 mt-4 ml-auto"
          *ngIf="questionPosition && questionPosition!==questions.length" (click)="changeQuestion(true)"> Next </a>
     </div>

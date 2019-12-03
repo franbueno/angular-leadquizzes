@@ -14,7 +14,7 @@ export class QuestionPreviewComponent {
   @Output() next = new EventEmitter<any>()
 
   get questionPosition(): number {
-    const indexOfQuestions = findIndex(this.questions, { name: this.form.value.name })
+    const indexOfQuestions = findIndex(this.questions, { id: this.form.value.id })
 
     if (indexOfQuestions > -1) {
       return indexOfQuestions + 1
@@ -27,7 +27,7 @@ export class QuestionPreviewComponent {
 
   changeQuestion(type?: boolean) {
     this.next.emit({
-      name: this.form.value.name,
+      id: this.form.value.id,
       type,
     })
   }
