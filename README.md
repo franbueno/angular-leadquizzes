@@ -26,6 +26,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## Backend
+
+Clone `https://github.com/franbueno/symfony-leadquizzes` for the whole setup 💛
+
 ## Further help
 
 To get more help on this project write to [Francisco Bueno](mailto:franciscobueno@me.com?subject=Leadquizzes%20Assessment)
