@@ -24,7 +24,7 @@
     "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
     "lodash": "^4.17.21",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.27",
     "ngx-file-drop": "^8.0.8",
     "ngx-toastr": "^11.2.1",
